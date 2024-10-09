@@ -1,0 +1,4 @@
+<configuration>
+    <setting path="java/ExecutionSample#period">10 ms</setting>
+    <setting path="jdk.SocketRead#threshold">20 ms</setting>
+</configuration>

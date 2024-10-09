@@ -1,0 +1,19 @@
+pipeline{
+  agent any
+    stages{
+       steps('Build'){
+            script{
+                sh 'mvn clean package'
+            }
+       }
+
+       stage('Run Test with JFR'){
+        steps{
+            script{
+                sh 'chmod +x ./jfr_recording.sh'
+                sh './jfr_recording.sh'
+            }
+       }
+
+
+    }

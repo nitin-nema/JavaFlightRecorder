@@ -1,0 +1,17 @@
+name: CI/CD pipeline
+
+on:[push,pull_request]
+
+jobs:
+ build:
+   runs-on:ubunbtu-latest
+
+   steps:
+    -name: checkout
+     uses:actions/checkout@v2
+
+    -name: Run JFR
+     run: |
+       chmod +x ./jfr_recording.sh
+       ./jfr_recording.sh
+       
